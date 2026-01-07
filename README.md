@@ -1,16 +1,38 @@
-# React + Vite
+# UTS React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based clone of the UTS Ticketing App, built with Vite.
 
-Currently, two official plugins are available:
+## Project Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-## React Compiler
+2.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Publishing / Deployment
 
-## Expanding the ESLint configuration
+The app has been built for production. You can find the optimized files in the `dist` folder.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Option 1: Netlify (Easiest)
+1.  Go to [Netlify Drop](https://app.netlify.com/drop).
+2.  Drag and drop the `dist` folder from this project into the browser window.
+3.  Your app will be live immediately!
+
+### Option 2: Vercel
+1.  Install Vercel CLI: `npm i -g vercel`
+2.  Run `vercel` in this directory and follow the prompts.
+
+### Option 3: GitHub Pages
+1.  Create a new repository on GitHub.
+2.  Push this code:
+    ```bash
+    git remote add origin <your-repo-url>
+    git branch -M main
+    git push -u origin main
+    ```
+3.  Configure GitHub Pages in the repo settings to deploy from the `gh-pages` branch (you may need to install `gh-pages` package).

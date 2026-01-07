@@ -8,7 +8,7 @@
   --gray-light: #F5F5F5;
   --gray-text: #666666;
   --border-color: #C8A4B6;
-  --pink-bg: #F3BAD6;
+  --pink-bg: #f0b9db;
   --orange-text: #E57C3A;
   --red-text: #C62828;
 }
@@ -601,8 +601,8 @@ body {
   justify-content: center;
   font-size: 12px;
   font-weight: 800;
-  color: #FFFFFF;
-  background: #FF6B35;
+  color: #f0b6d5;
+  background: #fa8748;
 }
 
 .station-row .station-name {

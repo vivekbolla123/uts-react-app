@@ -14,8 +14,15 @@ const STATIONS = [
 function HomePage() {
     const [sourceName, setSourceName] = useState('LOWER PAREL');
     const [destName, setDestName] = useState('DOMBIVLI');
-    // Default to future date matching screenshot or current date
-    const [journeyDate, setJourneyDate] = useState('2026-01-07');
+    // Default to today's date
+    const getTodayDate = () => {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    };
+    const [journeyDate, setJourneyDate] = useState(getTodayDate());
 
     const sourceStation = STATIONS.find(s => s.name === sourceName) || STATIONS[0];
     const destStation = STATIONS.find(s => s.name === destName) || STATIONS[1];

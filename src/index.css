@@ -1,0 +1,793 @@
+/* CSS Variables */
+:root {
+  --primary-orange: #E95420;
+  --light-orange: #F5A071;
+  --dark-orange: #D44815;
+  --white: #FFFFFF;
+  --black: #000000;
+  --gray-light: #F5F5F5;
+  --gray-text: #666666;
+  --border-color: #C8A4B6;
+  --pink-bg: #EFCFE0;
+  --orange-text: #E57C3A;
+  --red-text: #C62828;
+}
+
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Phone Container - simulating mobile view */
+.phone-container {
+  width: 100%;
+  max-width: 420px;
+  background: var(--white);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+.header {
+  background: var(--primary-orange);
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 5px;
+  text-decoration: none;
+}
+
+.railway-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 180px;
+}
+
+.header-title h1 {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Marquee Animation for IR UNRESERVED TICKETING */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee-text {
+  display: inline-block;
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 400;
+  animation: marquee 10s linear infinite;
+  padding-right: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+/* Simple Header for Ticket Detail */
+.header-simple {
+  background: var(--primary-orange);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header-simple .back-btn {
+  position: absolute;
+  left: 15px;
+  color: var(--white);
+}
+
+.header-simple h1 {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Show Ticket Bar */
+.show-ticket-bar {
+  background: linear-gradient(90deg, var(--primary-orange) 0%, var(--light-orange) 100%);
+  color: var(--white);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.ticket-icon {
+  font-size: 20px;
+}
+
+/* Main Content */
+.main-content {
+  padding: 15px;
+  background: var(--white);
+  min-height: calc(100vh - 150px);
+}
+
+/* Ticket Card */
+.ticket-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Ticket Header */
+.ticket-header {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.journey-type {
+  flex: 1;
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--light-orange) 100%);
+  color: var(--white);
+  padding: 12px 15px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fare {
+  background: var(--pink-bg);
+  color: var(--black);
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* Route Section */
+.route-section {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.station {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.station-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.source-badge {
+  background: var(--primary-orange);
+}
+
+.dest-badge {
+  background: var(--primary-orange);
+}
+
+.station-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.select-wrapper {
+  flex: 1;
+  border-bottom: 1px dashed #ccc;
+  margin-right: 5px;
+}
+
+.station-select {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: uppercase;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+}
+
+.date-input {
+  border: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--orange-text);
+  background: transparent;
+  outline: none;
+}
+
+/* Via Section */
+.via-section {
+  padding: 8px 15px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 13px;
+}
+
+.via-label {
+  color: var(--gray-text);
+  font-weight: 500;
+}
+
+.via-value {
+  color: var(--orange-text);
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+/* Passenger Details */
+.passenger-details {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.detail-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.detail-separator {
+  color: var(--gray-text);
+}
+
+.detail-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--orange-text);
+}
+
+.class-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.train-type {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray-text);
+}
+
+/* Booking Info */
+.booking-info {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.info-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.info-separator {
+  color: var(--gray-text);
+}
+
+.info-value {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.info-value.orange {
+  color: var(--orange-text);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  border-top: 1px solid var(--border-color);
+}
+
+.action-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange-text);
+  cursor: pointer;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.action-btn:first-child {
+  border-right: 1px solid var(--border-color);
+}
+
+.action-btn:hover {
+  background: var(--pink-bg);
+}
+
+.action-btn .arrow {
+  font-size: 16px;
+}
+
+.action-btn .search-icon {
+  font-size: 14px;
+}
+
+/* Bottom Icon */
+.bottom-icon {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+}
+
+.circle-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(229, 124, 58, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.circle-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ========== TICKET DETAIL PAGE ========== */
+.ticket-detail-page {
+  background: var(--white);
+  min-height: 100vh;
+}
+
+/* Scrolling Header for Ticket Detail */
+.ticket-detail-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+}
+
+.cris-logo {
+  width: 45px;
+  height: auto;
+}
+
+.scrolling-text-container {
+  flex: 1;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollText 8s linear infinite;
+  color: var(--red-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.ir-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Full Ticket Container */
+.full-ticket {
+  margin: 10px 15px;
+  border: 1px solid var(--border-color);
+
+  /* Keep the accent color on left */
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  background: var(--pink-bg);
+}
+
+/* Happy Journey Header */
+.happy-journey-header {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* Ticket Info Rows */
+.ticket-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 15px;
+  font-size: 13px;
+}
+
+.ticket-info-row .info-left {
+  color: var(--black);
+}
+
+.ticket-info-row .info-right {
+  color: var(--black);
+}
+
+.ticket-info-row .label {
+  font-weight: 600;
+}
+
+.ticket-info-row .fare-text {
+  font-weight: 700;
+}
+
+.ticket-info-row .value-bold {
+  font-weight: 600;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Station Rows */
+.station-row {
+  padding: 8px 15px;
+}
+
+.station-row .station-hindi {
+  font-size: 13px;
+  color: var(--black);
+  font-weight: 500;
+  margin-bottom: 2px;
+  padding-left: 28px;
+}
+
+.station-row .station-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.station-row .station-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--primary-orange);
+}
+
+.station-row .station-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.station-row .station-marathi {
+  font-size: 13px;
+  color: var(--black);
+  font-weight: 500;
+  margin-top: 2px;
+  padding-left: 28px;
+  margin-left: 0;
+}
+
+/* Adult Child Row */
+.adult-child-row {
+  padding: 10px 15px;
+  font-size: 13px;
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* Class Train Row */
+.class-train-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+.class-train-row .class-col,
+.class-train-row .train-col {
+  flex: 1;
+}
+
+.class-train-row .hindi-text {
+  font-size: 13px;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.class-train-row .main-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.class-train-row .main-value {
+  font-weight: 600;
+}
+
+/* Via Row */
+.via-row {
+  padding: 8px 15px;
+  font-size: 13px;
+  color: var(--black);
+}
+
+/* SAC Row */
+.sac-row {
+  padding: 8px 15px;
+  font-size: 12px;
+  color: var(--black);
+}
+
+/* GST Row */
+.gst-row {
+  padding: 10px 15px;
+  font-size: 13px;
+  color: var(--black);
+}
+
+/* Commence Row */
+.commence-row {
+  padding: 10px 15px;
+  font-size: 13px;
+  color: var(--black);
+}
+
+/* Train Details Row */
+.train-details-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 15px 0;
+  font-size: 12px;
+  color: var(--black);
+}
+
+.booking-time-row {
+  padding: 4px 15px 12px;
+  font-size: 12px;
+  color: var(--black);
+}
+
+/* Watermark */
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.watermark-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Notice Section */
+.notice-section {
+  padding: 12px 15px;
+  background: #FFF8E1;
+  font-size: 11px;
+  color: #FF5252;
+  /* Red text */
+  line-height: 1.5;
+}
+
+.notice-section a {
+  color: #1976D2;
+  text-decoration: underline;
+}
+
+.emergency-notice {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--red-text);
+  font-weight: 600;
+  font-size: 11px;
+}
+
+/* Action Buttons for Detail Page */
+.detail-action-buttons {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-btn {
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+}
+
+.btn-primary {
+  background: var(--primary-orange);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: #FFAB91;
+  color: var(--white);
+}
+
+.btn-tertiary {
+  background: #FFAB91;
+  color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  body {
+    background: var(--white);
+  }
+
+  .phone-container {
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  .bottom-icon {
+    bottom: 20px;
+    right: 20px;
+  }
+}

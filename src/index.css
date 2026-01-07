@@ -8,7 +8,7 @@
   --gray-light: #F5F5F5;
   --gray-text: #666666;
   --border-color: #C8A4B6;
-  --pink-bg: #EFCFE0;
+  --pink-bg: #F3BAD6;
   --orange-text: #E57C3A;
   --red-text: #C62828;
 }
@@ -537,8 +537,8 @@ body {
 .happy-journey-header {
   padding: 10px 15px;
   border-bottom: 1px solid var(--border-color);
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 800;
   color: var(--black);
 }
 
@@ -547,7 +547,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 6px 15px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .ticket-info-row .info-left {
@@ -559,15 +559,15 @@ body {
 }
 
 .ticket-info-row .label {
-  font-weight: 600;
-}
-
-.ticket-info-row .fare-text {
   font-weight: 700;
 }
 
+.ticket-info-row .fare-text {
+  font-weight: 800;
+}
+
 .ticket-info-row .value-bold {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .border-bottom {
@@ -607,7 +607,7 @@ body {
 }
 
 .station-row .station-name {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   color: var(--black);
 }
